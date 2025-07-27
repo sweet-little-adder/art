@@ -1,0 +1,8 @@
+# Global code owners for jojo-ventures repository
+# These owners will be the default owners for everything in the repo
+# and will be requested for review when someone opens a pull request.
+
+*       @daniel-jojo
+
+# Protect the CODEOWNERS file itself
+/.github/CODEOWNERS @daniel-jojo

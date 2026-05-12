@@ -1,0 +1,32 @@
+version: 1.0.8
+
+endpoints:
+  custom:
+    - name: "Ollama"
+      apiKey: "ollama-local"   # <- not "user_provided"
+      baseURL: "http://127.0.0.1:11434/v1"
+      models:
+        default: ["llama3.2:3b"]
+        fetch: true
+      titleConvo: true
+      titleModel: "llama3.2:3b"
+      summarize: false
+      forcePrompt: false
+      modelDisplayLabel: "Ollama (Local)"
+    - name: "OpenRouter"
+      # https://openrouter.ai/api-keys
+      apiKey: "${OPENROUTER_KEY}"
+      baseURL: "https://openrouter.ai/api/v1"
+      models:
+        # Free-tagged models on OpenRouter (availability can change).
+        default:
+          - "meta-llama/llama-3.1-8b-instruct:free"
+          - "mistralai/mistral-7b-instruct:free"
+          - "qwen/qwen-2.5-7b-instruct:free"
+          - "google/gemma-2-9b-it:free"
+        fetch: true
+      titleConvo: true
+      titleModel: "meta-llama/llama-3.1-8b-instruct:free"
+      summarize: false
+      forcePrompt: false
+      modelDisplayLabel: "OpenRouter (Free First)"

@@ -18,7 +18,7 @@ const plugins = [
     tsconfig: './tsconfig.json',
     useTsconfigDeclarationDir: true,
   }),
-  terser(),
+  ...(process.env.SKIP_TERSER === '1' ? [] : [terser()]),
 ];
 
 const subfolderPlugins = (folderName) => [
